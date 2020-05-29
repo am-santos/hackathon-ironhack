@@ -1,0 +1,15 @@
+<input required id="latitude"  name="userLatitude" placeholder="Your Latitude">
+<input required id="longitude" name="userLongitude" placeholder="Your Longitude">
+
+<script>
+  
+  const $latitude = document.getElementById('latitude');
+  const $longitude = document.getElementById('longitude');
+
+  navigator.geolocation.getCurrentPosition(position => {
+      $latitude.value = position.coords.latitude;
+      $longitude.value = position.coords.longitude;
+    })
+
+
+</script>
