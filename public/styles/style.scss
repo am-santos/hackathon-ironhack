@@ -1,4 +1,4 @@
-$font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-sans: 'Roboto', sans-serif;
 $grey: hsla(0, 0, 75%, 0.5);
 
 * {
@@ -33,16 +33,37 @@ a {
 
 nav {
   display: flex;
-  width: 52em;
-  height: 80px;
+  width: 100%;
+  height: 70px;
   align-self: center;
   justify-self: center;
   font-size: 1.2em;
+  background-color: #772d8a;
+  border: solid 1px #707070;
+  color: white;
+  
+  ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    color: white;
+    li {
+      color: white;
+      margin-right: 20px;
+      &:first-child {
+        margin-right: 1000px;
+      }
+
+    }
+  }
   a,
   button {
     padding: 1em 0;
     border: 0;
-    color: black;
+    color: white;
     &:not(:last-child) {
       margin-right: 1em;
     }
@@ -110,25 +131,85 @@ footer{
 .first-section {
   width: 100%;
   height: 100vh;
-  background-color: gray;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  padding-left: 40px;
+  justify-content: space-around;
+  flex-direction: column;
+  background-image: url('/images/first-image.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+    h1 {
+      width: 765px;
+      height: 213px;
+      font-family: $font-sans;
+      font-size: 4.5em;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.18;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffffff;
+    }
+    h5 {
+      width: 765px;
+      height: 213px;
+      font-family: $font-sans;;
+      font-size: 3em;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.18;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffffff;
+    }
+    button {
+      width: 324px;
+      height: 97px;
+      border-radius: 74px;
+      box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.16);
+      background-color: #772d8a;
+      color: white;
+      border-width: none;
+      display: flex;
+      align-self: center;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.16);
+
+    }
 }
 
 .second-section {
   width: 100%;
   height: 60vh;
-  background-color: white;
+  background-color:  #d3efdb;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
     h1 {
       font-size: 2em;
+      width: 354px;
+      height: 47px;
+      font-family: $font-sans;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.18;
+      letter-spacing: normal;
+      text-align: left;
+      color: #080000;
     }
     p {
       width: 700px;
+      line-height: 1.3;
+      letter-spacing: normal;
+      text-align: center;
+      font-size: 1.2em;
+
     }
 }
 
