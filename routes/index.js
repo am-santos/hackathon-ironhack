@@ -10,8 +10,8 @@ router.get('/', (req, res, next) => {
 });
 
 // Supermarket's Categories
-router.get('/storelist', (req, res, next) => {
-  res.render('views/stores/store-category'); // -> DONE
+router.get('/stores/store-category', (req, res, next) => {
+  res.render('stores/store-category'); // -> DONE
 });
 
 // Supermarkets for specific category

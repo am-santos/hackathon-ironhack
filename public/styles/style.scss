@@ -11,7 +11,7 @@ $grey: hsla(0, 0, 75%, 0.5);
 }
 
 body {
-  min-height: calc(100vh - 80px );
+  min-height: calc(100vh - 80px - 30px);
   max-width: 100%;
   padding: 0;
   margin: 0;
@@ -97,7 +97,9 @@ textarea {
 }
 
 footer{
-
+  width: 100%;
+  height: 30px;
+  background-color: orange;
 }
 
 #map-container {
@@ -193,5 +195,50 @@ footer{
       margin-bottom: 10px;
     }
   }
+}
+
+.store-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;  
+    button {
+      width: 100px;
+      height: 30px;
+      margin: 0 0 30px 300px;
+      padding: 0;
+      align-self: flex-start;
+      a {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    .row-data {
+      width: 70%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .store {
+      width: 300px;
+      height: 300px;
+      margin: 10px;
+      background-color: grey;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      img {
+        margin: 0;
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+      }
+      p {
+        font-size: 1.5em;
+      }
+    }
 }
 
