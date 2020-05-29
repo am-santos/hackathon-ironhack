@@ -10,24 +10,16 @@
   <body>
     <nav>
       <a href="/">Home</a>
-      <a href="#">Start Shopping</a>
+      <a href="/storelist">Start Shopping</a>
       <a href="#">Add your store</a>
       <a href="#">My profile</a>
       <a href="#">Shopping Cart</a>
-{{!--       {{#if user}}
-        <a href="/user/{{user._id}}/home">My Products</a>
-        <a href="/user/{{user._id}}/product/create">Create Product</a>
-        <a href="/user/profile/{{user._id}}">{{user.name}}'s Profile</a>
-        <form action="/authentication/sign-out" method="POST">
-          <button>Sign Out</button>
-        </form>
-        {{else}}
-        <a href="/authentication/sign-in">Sign In</a>
-        <a href="/authentication/sign-up">Sign Up</a>
-      {{/if}} --}}
     </nav>
     {{{body}}}
     <script src="/scripts/script.js"></script>
-    <footer>name © 2020</footer>
+    <footer>
+      <span>Copyright 2020 @ Blindary</span>
+      <a href="#">Terms of service</a></li>
+    </footer>
   </body>
 </html>
