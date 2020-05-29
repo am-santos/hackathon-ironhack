@@ -37,7 +37,7 @@ nav {
   height: 70px;
   align-self: center;
   justify-self: center;
-  font-size: 1.2em;
+  font-size: 1em;
   background-color: #772d8a;
   border: solid 1px #707070;
   color: white;
@@ -54,7 +54,7 @@ nav {
       color: white;
       margin-right: 20px;
       &:first-child {
-        margin-right: 1000px;
+        margin-right: 800px;
       }
 
     }
@@ -341,7 +341,7 @@ footer{
     }
 }
 
-.supermarket-single {
+.supermarket-list {
   width: 100%;
   height: 100vh;
   display: flex;
