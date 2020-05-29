@@ -15,6 +15,24 @@ const schema = new mongoose.Schema({
   },
   passwordHash: {
     type: String
+  },
+  role: {
+    type: String,
+    enum: ['client', 'owner'],
+    default: 'client'
+  },
+  profilePhotoUrl: {
+    type: String,
+    path: String
+  },
+  confirmation: {
+    token: {
+      type: String,
+      default: 'test123'
+    },
+    result: {
+      type: Boolean
+    }
   }
 });
 
