@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 
-const eventSchema = new mongoose.Schema(
+const storeSchema = new mongoose.Schema(
   {
     title: {
       type: String,
@@ -28,39 +28,15 @@ const eventSchema = new mongoose.Schema(
     address: {
       type: String
     },
-    date: {
-      type: Date,
-      required: true
-    },
-    endDate: {
-      type: Date,
-      required: true
-    },
     photo: {
       type: String
-    },
-    creator: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: 'User'
-    },
-    participants: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-      }
-    ]
-  },
-  {
-    timestamps: {
-      createdAt: 'createdDate',
-      updatedAt: 'updatedDate'
     }
   }
+  
 );
 
-eventSchema.index({ location: '2dsphere' });
+storeSchema.index({ location: '2dsphere' });
 
-const Event = mongoose.model('Event', eventSchema);
+const Store = mongoose.model('Store', storeSchema);
 
-module.exports = Event;
+module.exports = Store;
