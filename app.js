@@ -13,13 +13,17 @@ const sassMiddleware = require('node-sass-middleware');
 const serveFavicon = require('serve-favicon');
 const bindUserToViewLocals = require('./middleware/bind-user-to-view-locals.js');
 const passportConfigure = require('./passport-configuration.js');
+const hbs = require('hbs');
 const indexRouter = require('./routes/index');
 const authenticationRouter = require('./routes/authentication');
+const storeRouter = require('./routes/store');
 
 const app = express();
 
 app.set('views', join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+hbs.registerPartials(join(__dirname, '/views/partials'));
 
 app.use(serveFavicon(join(__dirname, 'public/images', 'favicon.ico')));
 app.use(
@@ -59,6 +63,7 @@ app.use(bindUserToViewLocals);
 
 app.use('/', indexRouter);
 app.use('/authentication', authenticationRouter);
+app.use('/stores', storeRouter);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {
