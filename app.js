@@ -12,12 +12,9 @@ const passport = require('passport');
 const sassMiddleware = require('node-sass-middleware');
 const serveFavicon = require('serve-favicon');
 const bindUserToViewLocals = require('./middleware/bind-user-to-view-locals.js');
-const passportConfigure = require('./passport-configuration.js');
+
 const hbs = require('hbs');
 const indexRouter = require('./routes/index');
-const authenticationRouter = require('./routes/authentication');
-const userRouter = require('./routes/user');
-const storeRouter = require('./routes/store');
 
 const app = express();
 
