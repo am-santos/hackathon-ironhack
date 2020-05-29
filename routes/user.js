@@ -41,24 +41,10 @@ const roleGuard = (roles) => (req, res, next) => {
 
 // Home Page - List of Owned Products
 allowedRoles = ['owner'];
-userRouter.get('/:userId/home', routeGuard, roleGuard(allowedRoles), (req, res, next) => {
+userRouter.get('/:userId/home', routeGuard, (req, res, next) => {
   const userId = req.params.userId;
 
   Product.find({ ownerId: userId })
-    .sort({ addedDate: -1 })
-    .then((products) => {
-      res.render('user/home-page-layout', { products, userId });
-    })
-    .catch((err) => {
-      next(err);
-    });
-});
-
-// Home Page - Suppliers
-userRouter.get('/:userId/home/supplier', routeGuard, roleGuard(['supplier']), (req, res, next) => {
-  const userId = req.params.userId;
-
-  Product.find({ $expr: { $lte: ['$quantity', '$supplyTrigger.quantity'] } })
     .sort({ addedDate: -1 })
     .then((products) => {
       res.render('user/home-page-layout', { products, userId });
@@ -155,14 +141,14 @@ userRouter.post(
 
 // Product Page - Create
 allowedRoles = ['owner'];
-userRouter.get('/:userid/product/create', routeGuard, roleGuard(allowedRoles), (req, res, next) => {
+userRouter.get('/:userid/product/create', routeGuard, (req, res, next) => {
   res.render('user/product/create_product');
 });
 
 userRouter.post(
   '/:userid/product/create',
   routeGuard,
-  roleGuard(allowedRoles),
+  // roleGuard(allowedRoles),
   // uploader.single('picture'),
   (req, res, next) => {
     /*
@@ -240,7 +226,7 @@ userRouter.get('/:userId/product/:productId', (req, res, next) => {
 userRouter.get(
   '/:userid/product/:productId/update',
   routeGuard,
-  roleGuard(allowedRoles),
+  // roleGuard(allowedRoles),
   (req, res, next) => {
     const owner = req.params.userId;
     const productId = req.params.productId;
@@ -260,7 +246,7 @@ userRouter.get(
 userRouter.post(
   '/:userid/product/:productId/update',
   routeGuard,
-  roleGuard(allowedRoles),
+  // roleGuard(allowedRoles),
   // uploader.single('picture'),
   (req, res, next) => {
     // URL information
@@ -311,7 +297,7 @@ userRouter.post(
 userRouter.post(
   '/:userid/product/:productId/delete',
   routeGuard,
-  roleGuard(allowedRoles),
+  // roleGuard(allowedRoles),
   (req, res, next) => {
     const productId = req.params.productId;
     const userId = req.params.userid;
