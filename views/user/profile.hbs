@@ -1,0 +1,11 @@
+<div >
+    <div >
+        <img src="{{ renderUser.profilePhotoUrl}}" alt="{{ renderUser.name}}">
+        <h4 > Hello, {{ renderUser.name }} </h4>
+        <h6 >Your role is: {{ renderUser.role }}</h6>
+        <h6 > {{ renderUser.email }} </h4>
+        <p >
+          <a href="/user/profile/{{renderUser._id}}/update" class="btn btn-primary">Update your profile</a>
+        </p>
+    </div>
+</div>
